@@ -10,11 +10,8 @@ import { LIKE } from "constants/cards";
 
 function* getCardsWorker() {
   try {
-    const liked = new Set(JSON.parse(localStorage.getItem("liked")) || []);
-    const disliked = new Set(
-      JSON.parse(localStorage.getItem("disliked")) || []
-    );
-
+    const liked = JSON.parse(localStorage.getItem("liked")) || [];
+    const disliked = JSON.parse(localStorage.getItem("disliked")) || [];
     const { data } = yield call(CardsApi.getCards);
     const cards = data.filter(
       item => ![...liked, ...disliked].includes(item.id)
