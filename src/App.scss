@@ -1,0 +1,10 @@
+@import "src/styles/variables.scss";
+@import "src/styles/fonts.scss";
+
+* {
+  font-family: "Nunito";
+}
+
+body {
+  background: $blackcurrant;
+}
