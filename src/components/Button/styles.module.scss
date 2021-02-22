@@ -1,0 +1,45 @@
+@import "src/styles/fonts.scss";
+@import "src/styles/variables.scss";
+@import "src/styles/mixins";
+
+.buttonWrapper {
+  background: linear-gradient(to bottom right, $orchid, $violet);
+  padding: 1px;
+  border-radius: 10px;
+  margin-top: -25px;
+  height: 258px;
+  width: 190px;
+}
+
+.button {
+  @include font-style($size: 38px, $color: $baby-blue, $bold: 500);
+  height: 100%;
+  width: 100%;
+  background: $blackcurrant;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  span {
+    @include font-style(
+      $gradient: (
+        $sky-blue,
+        $turquoise
+      )
+    );
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .buttonWrapper {
+    height: 202px;
+    width: 52px;
+  }
+  .button {
+    @include transform(rotate(-90deg));
+    @include position($position: relative, $top: 76px, $left: -74px);
+    height: 50px;
+    width: 200px;
+  }
+}
