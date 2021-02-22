@@ -1,0 +1,112 @@
+@mixin font-style(
+  $size: null,
+  $bold: null,
+  $color: null,
+  $align: null,
+  $lineHeight: null,
+  $transform: null,
+  $spacing: null,
+  $verticalAlign: null,
+  $family: null,
+  $decoration: null,
+  $gradient: null
+) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $bold {
+    font-weight: $bold;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $align {
+    text-align: $align;
+  }
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+  @if $transform {
+    text-transform: $transform;
+  }
+  @if $spacing {
+    letter-spacing: $spacing;
+  }
+  @if $verticalAlign {
+    vertical-align: $verticalAlign;
+  }
+  @if $family {
+    font-family: $family;
+  }
+  @if $decoration {
+    text-decoration: $decoration;
+  }
+  @if $gradient {
+    background: -webkit-linear-gradient(left, $gradient);
+    background: -o-linear-gradient(right, $gradient);
+    background: -moz-linear-gradient(right, $gradient);
+    background: linear-gradient(to right, $gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@mixin display-flex(
+  $justify: null,
+  $align: null,
+  $wrap: null,
+  $direction: null,
+  $grow: null
+) {
+  display: flex;
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $grow {
+    flex-grow: $grow;
+  }
+}
+
+@mixin position(
+  $position: null,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $z-index: null
+) {
+  @if $position {
+    position: $position;
+  }
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+  @if $z-index {
+    z-index: $z-index;
+  }
+}
+
+@mixin transform($value) {
+  transform: $value;
+  -o-transform: $value;
+  -ms-transform: $value;
+  -moz-transform: $value;
+  -webkit-transform: $value;
+}

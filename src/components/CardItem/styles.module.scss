@@ -1,0 +1,51 @@
+@import "src/styles/fonts.scss";
+@import "src/styles/variables.scss";
+@import "src/styles/mixins";
+
+.card {
+  @include display-flex($direction: column);
+  width: 300px;
+  min-height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &Info {
+    @include font-style($align: center);
+    flex-grow: 1;
+    background: $baby-blue;
+    padding: 0 20px 0 20px;
+  }
+
+  &Title {
+    @include font-style(
+      $size: 28px,
+      $color: $blackcurrant,
+      $transform: uppercase,
+      $bold: 500
+    );
+    margin-bottom: 0;
+  }
+
+  &Body {
+    @include font-style($size: 18px, $bold: 500);
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .card {
+    width: 220px;
+
+    &Info {
+      padding: 5px;
+    }
+
+    &Title {
+      font-size: 20px;
+    }
+
+    &Body {
+      font-size: 14px;
+    }
+  }
+}

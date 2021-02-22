@@ -1,0 +1,49 @@
+@import "src/styles/fonts.scss";
+@import "src/styles/variables.scss";
+@import "src/styles/mixins";
+
+.header {
+  text-align: center;
+  padding-top: 20px;
+
+  p {
+    margin: 0;
+  }
+
+  .greeting {
+    @include font-style($size: 17px, $spacing: 9px, $color: $baby-blue);
+  }
+
+  .name {
+    @include font-style(
+      $size: 48px,
+      $spacing: 2px,
+      $color: $flower,
+      $bold: 600,
+      $gradient: (
+        $flower 35%,
+        $neon-blue 70%
+      )
+    );
+    margin-top: 5px;
+  }
+
+  .description {
+    @include font-style(
+      $size: 18px,
+      $color: $baby-blue,
+      $bold: 500,
+      $lineHeight: 22px
+    );
+    margin-top: 12px;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .header {
+    br {
+      display: none;
+    }
+  }
+}
