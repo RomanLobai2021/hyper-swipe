@@ -9,6 +9,10 @@
   border-radius: 10px;
   overflow: hidden;
 
+  img {
+    height: 200px;
+  }
+
   &Info {
     @include font-style($align: center);
     flex-grow: 1;
