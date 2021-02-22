@@ -29,6 +29,13 @@ export default function CardsReducer(state = initialState, action) {
         error: action.payload
       };
 
+    case CardsActions.SWIPE_CARD.SUCCESS:
+      return {
+        ...state,
+        cards: action.payload,
+        loaded: true
+      };
+
     default:
       return state;
   }
